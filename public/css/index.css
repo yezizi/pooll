@@ -1,0 +1,322 @@
+body{
+	background:rgba(210,210,210,.1);
+}
+.header .title{
+	float:left;
+	margin-top:0;
+}
+.header .row{
+     margin-top: 10px;
+     display:block;
+}
+.header .lead strong{
+	font-family: "幼圆";
+	font-size: 30px;
+}
+.header strong{
+	font-weight: normal;
+}
+.window{
+	font-family: "黑体";
+	font-size: 22px;
+	color:#1C52F4;
+	letter-spacing: 0.1em;
+	margin-top:8px;
+}
+.two {
+	width:350px;
+	height:70px;
+}
+.two a{
+	font-family: "黑体";
+	font-size: 16px;
+	color:#333;
+	text-decoration:none;
+
+	display:block;
+	padding:19px 25px;
+	float:left;
+}
+.nav{
+	padding-top: 15px;
+	padding-bottom: 5px;
+	background-color:rgba(242,242,242,.7);
+}
+.nav ul li{
+	float:left;
+	list-style: none;
+	line-height: 20px;
+}
+.nav ul li a{	
+	padding:20px;
+	font-size: 18px;
+	color:#444;
+	font-family: "黑体";
+	text-decoration: none;
+}
+ul li a:hover{		
+  color:#1C52F4
+
+}
+.search{
+	margin-top:35px;
+	background:white;
+	height:34px;
+	width:570px;
+	border-radius:4px;
+}
+.search button{ 
+	background-color:rgba(28,82,244,1);
+	width:70px;
+	height:34px;
+	float:left;
+	text-align: center;
+	border-radius:0 4px 4px 0;
+	line-height:34px;
+	color:white;
+	border:none;
+}
+.search input{
+	background:white;
+	height:34px;
+	width:500px;
+	float:left;
+	border-radius:4px 0 0 4px;
+}
+nav .current{
+   color:#1C52F4;
+}
+.banner{
+	width:100%;
+	height:400px;
+	overflow:hidden;
+	top:0;
+	position:relative;
+	margin:0 auto;
+
+}
+.b-img{ 
+	height:400px;
+	 position:absolute; 
+	 left:0; 
+	 top:0;
+	 }
+.b-img a{ 
+	display:block; 
+	height:400px;
+	float:left;
+	}
+.b-list{ 
+     height:50px; 
+	 padding-top:350px;
+	 position:relative; 
+	 margin:0 auto;
+	 z-index:1;}
+.b-list span{ display:block;cursor:pointer; width:14px; height:14px; border-radius:50%; border:3px solid #fff; float:left; margin:0 5px; _margin:0 3px;}
+.b-list .spcss{border:3px solid #14ab04;}
+.bar-left{ position:absolute; z-index:1; display:block; width:100px; height:100%; left:0; background:none; top:0px; }
+.bar-right{ position:absolute;z-index:1; display:block; width:100px; height:100%; right:0; background:none; top:0px; }
+.bar-left em{ display:block; width:50px; height:100px; background:url(../images/arrow.png) 0px 0px no-repeat; margin:0 auto; margin-top:125px;}
+.bar-right em{ display:block; width:50px; height:100px; background:url(../images/arrow.png) -50px 0px no-repeat; margin:0 auto; margin-top:125px;}
+.bar-left .emcss{ background-position:0px -100px;}
+.bar-right .emcss{ background-position:-50px -100px;}
+.region .specular{
+	font-size:26px;
+	font-weight:bold;
+	padding:10px 10px;
+	background-color:#FFCC00;
+	border-radius: 0 30px 30px 0;
+    margin-bottom:20px;
+	color:#000;
+	font-family: "黑体";
+	font-style: italic;
+	width:200px;
+	margin-top:50px;
+}
+.region .choice{
+	margin-top:20px;
+	border:1px solid rgba(69,69,69,.2);
+	box-shadow: 1px 1px 7px rgba(69,69,69,.5);
+}
+.choice  a{
+	font-family: "黑体";
+     float:left;   
+     font-size:18px;
+     padding:13px 0;
+     vertical-align:middle;
+     display:block;
+     font-weight: bold;
+     color:#666;
+
+}
+.choice  a:hover{
+    font-family: "黑体";
+     color:rgba(28,82,244,.9);
+      background-color:rgba(28,82,244,.1);
+}
+.list .layer{
+    width:100%;
+   overflow: hidden;
+   position:relative;
+   margin-top: 30px;
+    margin-bottom:30px;	
+	-webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+.list .layer .comment{
+    top:0;
+    position:absolute;
+ 	width:100%;
+	height: 100%;
+	background:rgba(39,40,66,0.2);
+	visibility:hidden;
+	-webkit-transition: all 0.3s;
+    -moz-transition:all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+}
+.comment p{
+	font-size: 28px;
+	color:white;
+	margin-top:100px;
+	margin-bottom:80px;
+	visibility:visible;
+
+}
+.list .comment a{
+
+   color:white;
+   font-weight: bold;
+ 
+}
+.list .layer:hover .comment{
+	transform: translate3d(0,-10px,0);
+	visibility:visible;
+}
+
+.food .specular{
+	font-family: "黑体";
+	font-size:26px;
+	font-weight:bold;
+	padding:10px 10px;
+	background-color:#FFCC00;
+	border-radius: 0 30px 30px 0;
+    margin-bottom:20px;
+	color:#000;
+	font-style: italic;
+	width:200px;
+	margin-top:50px;
+}
+.food img{
+	border-radius: 10px;
+	border:1px solid #ccc;
+}
+.food .title a{
+	font-size: 26px;
+	padding:10px;
+    text-decoration: none;
+	font-family: "黑体";
+}
+
+.hot .specular{
+	font-size:26px;
+	font-weight:bold;
+	padding:10px 10px;
+	background-color:#FFCC00;
+	border-radius: 0 30px 30px 0;
+    margin-bottom:20px;
+	color:#000;
+	font-family: "黑体";
+	font-style: italic;
+	width:200px;
+	margin-top:30px;
+}
+.hot .layer{
+	position:relative;
+    margin-bottom:30px;
+	width:100%;
+    overflow: hidden;
+	-webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+.layer .dl1{
+	position:absolute;
+
+	width:100%;
+	height: 100%;
+	background:rgba(39,40,66,0.2);
+    visibility: hidden;
+	top: 0;
+    left: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition:all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.dl1 h3{
+	margin-top:150px;
+	font-weight: bold;
+    visibility: visible;
+	font-size:30px; 
+	color:white;
+}
+.dl1 a{
+	display:block;
+	color:white;
+	text-decoration: none;
+	margin:25px 20px;
+}
+.dl1 a:hover{
+	color:white;	
+}
+.hot img{
+   border:1px solid #ccc;
+   border-radius: 6px;
+}
+.hot .name {
+   position:absolute;  
+   top:0;
+   width:100%;
+}
+.hot .name p{
+	font-size:32px;
+	color:white;
+	visibility: visible;
+}
+
+.layer img {
+    border:1px solid white;
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    --webkit-transition: all 0.3s;
+    -moz-transition:all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.layer:hover img{
+	-webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.layer:hover .dl1{
+	visibility:visible;
+}
+.comment img{
+	width:20px;
+	height:20px;
+	border-radius: 20px;
+	float:left;
+	margin-right: 10px;
+}
+.dl h2{
+	font-weight: bold;
+
+}
+

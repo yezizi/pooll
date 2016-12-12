@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>搜索页面</title>
+  <link href="css/search.css" rel="stylesheet">
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+  <article class="header">
+  <div class="container">
+    <div class="row">
+       <div class="col-lg-1 col-md-1 col-xs-1 col-sm-1 text-left">
+      <div class="lead"><strong>窗外</strong></div>
+      </div>
+      <div class="col-lg-3 window">|　窗外的世界很精彩</div>
+      <div class="col-lg-6 two text-right">
+      <div id="title" class="title">
+      <a href="register1.html">注册</a>     
+      <a href="login1.html">登陆</a>
+      </div>
+      <a href="#">关注我们</a>
+      <a href="#">点评</a>     
+      </div>
+    </div>
+  </div>
+</article>
+<nav class="nav nav-bar">
+    <div class="container">
+      <div class="row">
+      <ul class="col-lg-6">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="#">目的地</a></li>
+      <li><a href="#">景点</a></li>
+      <li><a href="food.html">美食</a></li>
+      <li><a href="#">游记</a></li>
+      <li><a href="#">写点评</a></li>
+      <div class="search ">     
+      <input type="text" class="form-control" id="input"> 
+      <button id="submit">搜索</button>
+      </div>
+     </ul>
+    </div>
+  </div>   
+  </nav>
+<article class="content">
+  <div class="container">
+  <div class="row" id="list">
+   <!--  <div class="col-lg-8">
+    <div class="panel">      
+      <img src="images/kenasi.jpg">
+      <ul>
+      <li><a href="#">5555555</a></li>
+      <li><p>推荐人群</p></li>
+      <li><p>崎岖</p></li>
+      <li><p>味道</p></li>
+      <li><p>地区</p></li>
+      </ul>
+    </div>
+    <div> -->
+  </div>
+  </div>
+</article>
+
+
+  </body>
+<script src="js/js.cookie-2.1.0.min.js"></script>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- <script src="layer/layer.js"></script> -->
+<script src="js/arg-1.3.js"></script>
+<script src="js/handlebars-v4.0.5.js"></script>
+<script>
+function buttonStatus(){
+       var a=$('#input').val();
+       console.log(a);
+        var flag=1;
+          console.log(flag);
+        if(!a){
+          flag=0;
+        }
+        console.log(flag);
+        if(flag==1){
+          $('#submit').attr('disabled',false)
+        }
+        else{          
+          $('#submit').attr('disabled',true)
+        }
+      }
+   $(function(){
+      $('#input').on('blur',function(){
+        buttonStatus()
+      })
+      $('#input').on('keyup',function(){
+         buttonStatus()
+      })
+})
+</script>
+<script id="out" type="text/x-handlebars-template">
+  {{#each wad}}
+   <div class="col-lg-8">
+  	<div class="panel">
+    <img src="{{pic_1}}"/>
+    <ul>
+      <li>
+         <a href="food.html?id={{id}}">
+        {{name}}
+        </a>
+      </li>
+      <li><p>{{taste}}</p></li>
+      <li><p>{{propose}}</p></li>
+      <li><p>{{area}}</p></li>
+    </ul>   
+    </div>
+    </div>
+    {{/each}}
+ </script>
+
+<script type="text/javascript">
+$(function(){
+    var s=Arg('search');  
+    console.log(s) ; 
+    var pp=document.getElementById('input');
+     pp.value =s;
+    if(s){
+            $.ajax({
+            url:'wad/search',
+            method:'post',
+            data: {search:s},
+            dataType:'json',
+            success:function(data,status,xhr){    
+              var source = $('#out').html();
+              var template = Handlebars.compile(source);
+              var da = {'wad': data};
+              $('#list').html(template(da));
+            },
+            error:function(xhr,status,error){
+              console.log(error);
+            }
+          });   
+              
+      }
+    $('#submit').on('click', function () {
+      $.ajax({
+       url:'wad/search',
+       method:'post',
+       data: {search:$('#input').val()},
+       dataType:'json',
+       success:function(data,status,xhr){    
+        var source = $('#out').html();
+        var template = Handlebars.compile(source);
+        var da = {'wad': data};
+        $('#list').html(template(da));
+      },
+      error:function(xhr,status,error){
+        console.log(error);
+      }
+    });
+  });
+});
+</script>
+
+
+ <script type="text/javascript">   
+if(Cookies.get('user')){
+document.getElementById('title').innerHTML=
+'<a href="#">欢迎您:　'+Cookies.get('user')+'</a>';
+}
+  </script>
+  </html>

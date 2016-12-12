@@ -1,0 +1,137 @@
+
+body{
+	background:rgba(210,210,210,.1);
+}
+.header .title{
+	float:left;
+	margin-top:0;
+}
+.header .row{
+     margin-top: 10px;
+     display:block;
+}
+.header .lead strong{
+	font-family: "幼圆";
+	font-size: 30px;
+}
+.window{
+	font-family: "黑体";
+	font-size: 22px;
+	color:#1C52F4;
+	letter-spacing: 0.1em;
+	margin-top:8px;
+}
+.two a{
+	font-family: "黑体";
+	font-size: 16px;
+	color:#333;
+	text-decoration:none;
+
+	display:block;
+	padding:14px 20px;
+	float:left;
+}
+.nav{
+	padding-top: 15px;
+	padding-bottom: 5px;
+	
+}
+.nav ul li{
+	float:left;
+	list-style: none;
+	line-height: 20px;
+}
+.nav ul li a{	
+	padding:20px;
+	font-size: 18px;
+	color:#444;
+	font-family: "黑体";
+	text-decoration: none;
+}
+ul li a:hover{		
+  color:#1C52F4
+
+}
+.search{
+	margin-top:35px;
+	background:white;
+	height:34px;
+	width:570px;
+	border-radius:4px;
+}
+.search button{ 
+	background-color:rgba(28,82,244,1);
+	width:70px;
+	height:34px;
+	float:left;
+	text-align: center;
+	border-radius:0 4px 4px 0;
+	line-height:34px;
+	color:white;
+	border:none;
+}
+.search input{
+	background:white;
+	height:34px;
+	width:500px;
+	float:left;
+	border-radius:4px 0 0 4px;
+}
+.content .row{
+	margin-top:20px;
+	padding-top:20px;
+	border-top:1px solid #ccc;
+}
+
+.content  .sa{
+	font-size:18px;
+	line-height:28px;
+	font-family: "幼圆";
+	margin-top:20px;
+	padding:10px 15px;
+}
+.content  h2{
+	font-family: "幼圆";
+	font-size:30px;
+	line-height:28px;
+	margin-left: 21px;
+}
+.content  img{
+	border-radius: 8px;
+	margin-top:20px;
+	float:left;
+}
+.content  .right p{
+	font-size:18px;
+	line-height:28px;
+	font-family: "幼圆";
+
+}
+.content  .right {	
+	margin-top:20px;
+}
+.content  .dl{
+	background-color:rgba(230,230,230,.4);
+	width:390px;
+	position:absolute;
+	bottom:0;
+	padding: 10px;
+}
+.content  .left  a img{	
+	border-radius: 25px;
+	width:25px;
+	height:25px;
+	margin:0 2px;
+	border:0.6px solid white;
+}
+.content  .left  p{	
+	float:left;
+	font-size: 16px;
+	font-weight: bold;
+	color:#fff;
+	margin-left:12px;
+	line-height: 18px;
+	margin-top:4px;
+
+}
+

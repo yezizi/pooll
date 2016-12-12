@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title># - 用户登录</title>
+  <!--[if lt IE 9]>
+  <script src="html5shiv/html5shiv.min.js"></script>
+  <script src="respond/respond.min.js"></script>
+  <![endif]-->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/food.css" rel="stylesheet">
+
+</head>
+<body>
+<article class="header">
+  <div class="container">
+    <div class="row ">
+      <div class="col-lg-1 col-md-1 col-xs-1 col-sm-1 text-left">
+      <div class="lead"><strong>窗外</strong></div>
+      </div>
+      <div class="col-lg-3 window">|　窗外的世界很精彩</div>
+      <div class="col-lg-6 two text-right">
+      <div id="title" class="title">
+      <a href="register1.html">注册</a>     
+      <a href="login1.html">登陆</a>
+      </div>
+      <a href="#">关注我们</a>
+      <a href="#">点评</a>
+      
+      </div>
+    </div>
+  </div>
+</article>
+<nav class="nav nav-bar">
+    <div class="container">
+      <div class="row">
+      <ul class="col-lg-6">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="#">目的地</a></li>
+      <li><a href="#">景点</a></li>
+      <li><a href="food.html">美食</a></li>
+      <li><a href="#">游记</a></li>
+      <li><a href="#">写点评</a></li>
+     </ul>
+    </div>
+  </div>   
+  </nav>
+<article class="content">
+<div class="container">
+  <div class="row">
+       <h2 id="hname0" class="text-left"></h2>
+       <p  class="sa" id="hintro0"></p>
+       <div class="col-lg-4 left">
+        <img src=" " id="hpic_10"  width="350px">
+        <div class="dl"> 
+        <a href="#" id="photo"><img src="images/luoye.jpg">
+        </a><a href="#" id="photo"><img src="images/luoye.jpg">
+        </a><a href="#" id="photo"><img src="images/luoye.jpg">
+        </a><a href="#" id="photo"><img src="images/luoye.jpg">
+        </a>
+        <p>最新访问用户</p>
+        </div>     
+    </div>
+    <div class="right col-lg-5 col-lg-offset-1">
+
+        <p><a href="#" id="halias0"></a></p>
+        <p id="htaste0"></p>
+        <p><a href="#" id="harea0"></a></p>
+        <p id="hhistory0"></p>
+        <p><a href="#" id="hpropose0"></a></p>
+        <p><a href="#" id="access">访问量：12000次</a></p>
+        
+        </div>
+  </div>
+</div>
+</article>
+</body>
+<script src="js/js.cookie-2.1.0.min.js"></script>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- <script src="layer/layer.js"></script> -->
+<script src="js/banner.js"></script>
+<script src="js/arg-1.3.js"></script>
+
+<script>
+$(function(){
+
+$.ajax({
+      url:'wad/'+Arg('id'),
+      method:'get',     
+      dataType:'json',
+      success:function(data,status,xhr){
+            console.log(data);
+            
+            //for(i=0;i<data.length;i++){
+              console.log(Arg('id'));
+              console.log(data[0]);
+              $('#hname0').text(data[0].name);
+              $('#halias0').text(data[0].alias);
+              $('#htaste0').text(data[0].taste);
+              $('#hintro0').text(data[0].intro);
+              $('#hpropose0').text(data[0].propose);  
+              $('#hhistory0').text(data[0].history);
+              $('#hpic_10').attr('src',data[0].pic_1);
+              $('#harea0').text(data[0].area);
+                 
+            var d='wad/'+Arg('id');
+            console.log(d);
+            return;
+            //}
+      },
+      error:function(xhr,status,error){
+          console.log(error);
+      }
+    })
+   $.ajax({
+        url:'log/browse/wad/'+Arg('id'),
+        method:'get',
+         success:function(data,status,xhr){
+
+         },
+         error:function(xhr,status,error){         
+         }
+   })
+ })
+    
+</script>
+
+<script>
+if(Cookies.get('user')){
+document.getElementById('title').innerHTML=
+'<a href="#">欢迎您:　'+Cookies.get('user')+'</a>';
+}
+</script>
+</html>

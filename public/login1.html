@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title># - 用户登录</title>
+  <!--[if lt IE 9]>
+  <script src="html5shiv/html5shiv.min.js"></script>
+  <script src="respond/respond.min.js"></script>
+  <![endif]-->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 page-header">
+      <h1 class="text-center">#<br/>
+        <small>用户登录</small>
+      </h1>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<br />
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-md-offset-9" id="form">
+      <div class="form-group">
+        <label for="account">账号</label>
+        <input type="text" class="form-control" id="account"/>
+      </div>
+      <div class="form-group">
+        <label for="password">密码</label>
+        <input type="password" class="form-control" id="password"/>
+      </div>
+      <button id="login" class="btn btn-primary btn-block">登录</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/js.cookie-2.1.0.min.js"></script>
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- <script src="layer/layer.js"></script> -->
+<script src="js/login.js"></script>
+<script>
+function buttonStatus(){
+  var input=$('#form input')
+  var flag=1
+  for (var i=0;i<input.length;i++){
+     if (!input[i].value){
+          flag=0
+     }
+  }
+if(flag==1){
+   $('#login').attr('disabled',false)
+}
+else{
+    $('#login').attr('disabled',true)
+}
+}
+$(function(){
+  $('#form input').on('blur',function(){
+   buttonStatus()
+  })
+$('#form input').on('keyup',function(){
+    buttonStatus()
+   })
+   })
+</script>
+</body>
+</html>

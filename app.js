@@ -18,6 +18,9 @@ app.use('/wad', wad);
 var userLog = require('./router/user-log')
 app.use('/log', userLog)
 
+var scenery = require('./router/scenery')
+app.use('/scenery', scenery)
+
 app.post('/register', function (req, res) {
   mysql.pool.getConnection(function (error, connection) {
     if (error) {

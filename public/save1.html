@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  </head>
+  <body>
+  <script type="text/javascript">
+  var resultA=resultB=0;
+  for (var i=1;i<=4000;i++){
+  	if(30<Math.round(Math.random()*100)){
+  		resultA++;
+  	}else{
+  		if(50<Math.round(Math.random()*100)){
+  			resultB++;
+  		}
+  	}
+  	
+  	a=resultA/i;
+  	b=resultB/i;
+  	
+  	console.log('---A:'+a+',B:'+b)
+  }
+  </script>
+  </body>
+  </html>
